@@ -1,0 +1,53 @@
+﻿@page
+@model Assessment.Pages.StdDetailsModel
+@{
+}
+<div class="container">
+    <h1>student details</h1>
+    <form method="post">
+        <table class="table">
+            <tr>
+                <td>StudentId</td>
+                <td><input type="number" required asp-for="@Model.Student.StudentId"></input></td>
+            </tr>
+            <tr>
+                <td>StudentName</td>
+                <td><input type="text" required asp-for="@Model.Student.StudentName"></input></td>
+            </tr>
+            <tr>
+                <td>Qualification</td>
+                <td>
+                    <input type="text" required asp-for="@Model.Student.Qualification"></input>
+                </td>
+            </tr>
+            <tr>
+                <td>Skill</td>
+                <td><input type="text" required asp-for="@Model.Student.Skill"></input></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Register"></input></td>
+            </tr>
+        </table>
+    </form>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Student_Id</th>
+                <th>Student_Name</th>
+                <th>Qualification</th>
+                <th>Skill</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Students)
+            {
+                <tr>
+                    <td>@item.StudentId</td>
+                    <td>@item.StudentName</td>
+                    <td>@item.Qualification</td>
+                    <td>@item.Skill</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
